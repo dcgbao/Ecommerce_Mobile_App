@@ -3,5 +3,6 @@ export const screenName = {
   MAIN_NAVIGATOR: "main navigator",
   LOGIN: "login",
   REGISTER: "register",
-  FORGOT_PASSWORD: "forgot password"
+  FORGOT_PASSWORD: "forgot password",
+  POSTING_PRODUCT_FORM: 'posting product'
 }

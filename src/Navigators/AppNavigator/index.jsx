@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { color } from '../../utils/colors';
 import { screenName } from '../../utils/screenName';
 import { AuthenticationNavigator } from '../AuthenticationNavigator';
+import { MainNavigator } from '../MainNavigator';
 
 export function AppNavigator() {
   const Stack = createNativeStackNavigator()
@@ -29,6 +30,7 @@ export function AppNavigator() {
           screenOptions={{ headerShown: false }}
         >
           <Stack.Screen name={screenName.AUTHENTICATION_NAVIGATOR} component={AuthenticationNavigator} />
+          <Stack.Screen name={screenName.MAIN_NAVIGATOR} component={MainNavigator} />
         </Stack.Navigator>
       </NavigationContainer>
     </View>
