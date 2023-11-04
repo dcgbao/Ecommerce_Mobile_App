@@ -4,5 +4,9 @@ export const screenName = {
   LOGIN: "login",
   REGISTER: "register",
   FORGOT_PASSWORD: "forgot password",
-  POSTING_PRODUCT_FORM: 'posting product'
+  POSTING_PRODUCT_FORM: 'posting product',
+  HOME: "home",
+  MESSAGE: "message",
+  PRODUCT: "product",
+  ACCOUNT: "account",
 }

@@ -15,7 +15,7 @@ export function LoginScreen({ navigation }) {
   const [buttonDisabled, setButtonDisabled] = useState(true)
 
   const handleLogin = () => {
-    navigation.navigate(screenName.POSTING_PRODUCT_FORM)
+    navigation.navigate(screenName.MAIN_NAVIGATOR)
   }
 
   useEffect(() => {
