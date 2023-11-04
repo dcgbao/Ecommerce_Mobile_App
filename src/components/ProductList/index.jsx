@@ -1,4 +1,5 @@
 import { View, StyleSheet, Image, Text, ScrollView, TouchableOpacity } from "react-native";
+import { getPriceFormat } from "../../utils/getPriceFormat";
 import { color } from "../../utils/colors";
 
 export function ProductList() {
@@ -11,9 +12,7 @@ export function ProductList() {
           <View style={style.infoContainer}>
             <Text style={style.name}>{"something"}</Text>
             <Text style={style.price}>
-              {new Intl.NumberFormat({ maximumSignificantDigits: 3 }).format(
-                1000000,
-              )}{" đ"}
+              {getPriceFormat(1000000)}
             </Text>
             <Text style={style.address}>{"something"}</Text>
           </View>
@@ -24,9 +23,7 @@ export function ProductList() {
           <View style={style.infoContainer}>
             <Text style={style.name}>{"something"}</Text>
             <Text style={style.price}>
-              {new Intl.NumberFormat({ maximumSignificantDigits: 3 }).format(
-                1000000,
-              )}{" đ"}
+              {getPriceFormat(1000000)}
             </Text>
             <Text style={style.address}>{"something"}</Text>
           </View>
@@ -37,9 +34,7 @@ export function ProductList() {
           <View style={style.infoContainer}>
             <Text style={style.name}>{"something"}</Text>
             <Text style={style.price}>
-              {new Intl.NumberFormat({ maximumSignificantDigits: 3 }).format(
-                1000000,
-              )}{" đ"}
+              {getPriceFormat(1000000)}
             </Text>
             <Text style={style.address}>{"something"}</Text>
           </View>
@@ -50,9 +45,7 @@ export function ProductList() {
           <View style={style.infoContainer}>
             <Text style={style.name}>{"something"}</Text>
             <Text style={style.price}>
-              {new Intl.NumberFormat({ maximumSignificantDigits: 3 }).format(
-                1000000,
-              )}{" đ"}
+              {getPriceFormat(1000000)}
             </Text>
             <Text style={style.address}>{"something"}</Text>
           </View>
@@ -63,9 +56,7 @@ export function ProductList() {
           <View style={style.infoContainer}>
             <Text style={style.name}>{"something"}</Text>
             <Text style={style.price}>
-              {new Intl.NumberFormat({ maximumSignificantDigits: 3 }).format(
-                1000000,
-              )}{" đ"}
+              {getPriceFormat(1000000)}
             </Text>
             <Text style={style.address}>{"something"}</Text>
           </View>
@@ -76,9 +67,7 @@ export function ProductList() {
           <View style={style.infoContainer}>
             <Text style={style.name}>{"something"}</Text>
             <Text style={style.price}>
-              {new Intl.NumberFormat({ maximumSignificantDigits: 3 }).format(
-                1000000,
-              )}{" đ"}
+              {getPriceFormat(1000000)}
             </Text>
             <Text style={style.address}>{"something"}</Text>
           </View>
@@ -89,9 +78,7 @@ export function ProductList() {
           <View style={style.infoContainer}>
             <Text style={style.name}>{"something"}</Text>
             <Text style={style.price}>
-              {new Intl.NumberFormat({ maximumSignificantDigits: 3 }).format(
-                1000000,
-              )}{" đ"}
+              {getPriceFormat(1000000)}
             </Text>
             <Text style={style.address}>{"something"}</Text>
           </View>
@@ -102,9 +89,7 @@ export function ProductList() {
           <View style={style.infoContainer}>
             <Text style={style.name}>{"something"}</Text>
             <Text style={style.price}>
-              {new Intl.NumberFormat({ maximumSignificantDigits: 3 }).format(
-                1000000,
-              )}{" đ"}
+              {getPriceFormat(1000000)}
             </Text>
             <Text style={style.address}>{"something"}</Text>
           </View>

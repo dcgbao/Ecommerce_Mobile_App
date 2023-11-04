@@ -3,6 +3,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Entypo';
 import { screenName } from '../../utils/screenName';
 import { HomeScreen } from '../../screens/HomeScreen';
+import { PostingScreen } from '../../screens/PostingProductScreen';
+import { ManageProductScreen } from '../../screens/ManageProductsScreen';
+import { UserCartScren } from '../../screens/UserCartScreen';
 import { color } from '../../utils/colors';
 import { tabName } from '../../utils/tabName';
 import { ProductScreen } from '../../screens/ProductScreen';
@@ -57,8 +60,32 @@ export function MainNavigator() {
       />
       <Tab.Screen
         name={screenName.POSTING_PRODUCT_FORM}
-        component={HomeScreen}
+        component={PostingScreen}
         options={{ tabBarLabel: () => PostingTabLabel() }}
+      />
+      <Tab.Screen
+        name={screenName.POSTING_MANAGEMENT}
+        children={()=><ManageProductScreen title={'Bài đăng'}/>}
+        options={() => ({
+          tabBarStyle: {
+            display: "none",
+          },
+          tabBarButton: () => null,
+        })}
+      />
+      <Tab.Screen
+        name={screenName.ORDERED_MANAGEMENT}
+        children={()=><ManageProductScreen title={'Đơn mua'}/>}
+        options={() => ({
+          tabBarButton: () => null,
+        })}
+      />
+      <Tab.Screen
+        name={screenName.USER_CART}
+        component={UserCartScren}
+        options={() => ({
+          tabBarButton: () => null,
+        })}
       />
       <Tab.Screen
         name={screenName.PRODUCT}
@@ -113,15 +140,18 @@ const PostingTabLabel = () => {
     <View style={{
       height: 74,
       width: 74,
-      borderRadius: 74 / 2,
-      marginBottom: (100 - 74) / 2,
+      borderRadius: '50%',
       backgroundColor: color.PRIMARY,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      position: 'relative',
+      bottom: '40%'
     }}>
       <Text style={{
         color: color.WHITE,
-        fontSize: 48,
+        fontSize: 40,
         textAlign: 'center',
-        lineHeight: 74,
       }}>{'+'}</Text>
     </View>
   );
