@@ -26,7 +26,7 @@ export function AppNavigator() {
     <View style={styles.container}>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName={screenName.AUTHENTICATION_NAVIGATOR}
+          initialRouteName={screenName.MAIN_NAVIGATOR}
           screenOptions={{ headerShown: false }}
         >
           <Stack.Screen name={screenName.AUTHENTICATION_NAVIGATOR} component={AuthenticationNavigator} />

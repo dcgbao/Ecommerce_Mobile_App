@@ -5,6 +5,7 @@ import { screenName } from '../../utils/screenName';
 import { HomeScreen } from '../../screens/HomeScreen';
 import { color } from '../../utils/colors';
 import { tabName } from '../../utils/tabName';
+import { ProductScreen } from '../../screens/ProductScreen';
 
 export function MainNavigator() {
   const Tab = createBottomTabNavigator()
@@ -61,7 +62,7 @@ export function MainNavigator() {
       />
       <Tab.Screen
         name={screenName.PRODUCT}
-        component={HomeScreen}
+        component={ProductScreen}
         options={{
           tabBarLabel: (props) => TabLabel({
             inherit: props,
