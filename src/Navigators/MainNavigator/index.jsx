@@ -5,10 +5,11 @@ import { screenName } from '../../utils/screenName';
 import { HomeScreen } from '../../screens/HomeScreen';
 import { PostingScreen } from '../../screens/PostingProductScreen';
 import { ManageProductScreen } from '../../screens/ManageProductsScreen';
-import { UserCartScren } from '../../screens/UserCartScreen';
+import { UserCartScreen } from '../../screens/UserCartScreen';
 import { color } from '../../utils/colors';
 import { tabName } from '../../utils/tabName';
 import { ProductScreen } from '../../screens/ProductScreen';
+import { ProductDetailScreen } from '../../screens/ProductDetailScreen';
 
 export function MainNavigator() {
   const Tab = createBottomTabNavigator()
@@ -64,30 +65,6 @@ export function MainNavigator() {
         options={{ tabBarLabel: () => PostingTabLabel() }}
       />
       <Tab.Screen
-        name={screenName.POSTING_MANAGEMENT}
-        children={()=><ManageProductScreen title={'Bài đăng'}/>}
-        options={() => ({
-          tabBarStyle: {
-            display: "none",
-          },
-          tabBarButton: () => null,
-        })}
-      />
-      <Tab.Screen
-        name={screenName.ORDERED_MANAGEMENT}
-        children={()=><ManageProductScreen title={'Đơn mua'}/>}
-        options={() => ({
-          tabBarButton: () => null,
-        })}
-      />
-      <Tab.Screen
-        name={screenName.USER_CART}
-        component={UserCartScren}
-        options={() => ({
-          tabBarButton: () => null,
-        })}
-      />
-      <Tab.Screen
         name={screenName.PRODUCT}
         component={ProductScreen}
         options={{
@@ -108,6 +85,35 @@ export function MainNavigator() {
             iconName: 'user'
           })
         }}
+      />
+
+      <Tab.Screen
+        name={screenName.POSTING_MANAGEMENT}
+        children={() => <ManageProductScreen title={'Bài đăng'} />}
+        options={() => ({
+          tabBarButton: () => null,
+        })}
+      />
+      <Tab.Screen
+        name={screenName.ORDERED_MANAGEMENT}
+        children={() => <ManageProductScreen title={'Đơn mua'} />}
+        options={() => ({
+          tabBarButton: () => null,
+        })}
+      />
+      <Tab.Screen
+        name={screenName.USER_CART}
+        component={UserCartScreen}
+        options={() => ({
+          tabBarButton: () => null,
+        })}
+      />
+      <Tab.Screen
+        name={screenName.PRODUCT_DETAIL}
+        component={ProductDetailScreen}
+        options={() => ({
+          tabBarButton: () => null,
+        })}
       />
     </Tab.Navigator>
   )

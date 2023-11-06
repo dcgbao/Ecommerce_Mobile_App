@@ -12,4 +12,5 @@ export const screenName = {
   MESSAGE: "message",
   PRODUCT: "product",
   ACCOUNT: "account",
+  PRODUCT_DETAIL: "product detail",
 }

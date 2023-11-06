@@ -30,7 +30,7 @@ const DummyData = [
   }
 ]
 
-export const UserCartScren = () => {
+export const UserCartScreen = () => {
   const [totalMoney, setTotalMoney] = useState('12.000.000 VND');
 
   const pageNavigationHandler = () => {
