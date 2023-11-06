@@ -13,4 +13,5 @@ export const screenName = {
   PRODUCT: "product",
   ACCOUNT: "account",
   PRODUCT_DETAIL: "product detail",
+  PAYMENT_SUCCESS_SCREEN: "payment success"
 }
