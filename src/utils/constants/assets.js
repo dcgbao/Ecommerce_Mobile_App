@@ -7,6 +7,13 @@ import contact from '../../../assets/images/Message_duotone.png'
 import ban from '../../../assets/images/Chield_check_duotone_line.png'
 import newchat from '../../../assets/images/newchatpng.png'
 import chatnoti from '../../../assets/images/notifications_none.png'
+import more from '../../../assets/images/MoreIcon.png'
+import clip from '../../../assets/images/clip.png'
+import attach from '../../../assets/images/Vector.png'
+import camera from '../../../assets/images/camera.png'
+import micro from '../../../assets/images/microphone.png'
+import file from '../../../assets/images/Vector.png'
+
 
 import logo from "../../../assets/images/logo.png";
 import nft01 from "../../../assets/images/nft01.png";
@@ -32,6 +39,12 @@ export default {
   search,
   newchat,
   chatnoti,
+  more,
+  clip,
+  attach,
+  camera,
+  micro,
+  file,
 
   logo,
   nft01,
