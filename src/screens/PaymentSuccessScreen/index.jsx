@@ -7,7 +7,7 @@ import { color } from '../../utils/colors';
 export default function PaymentSuccessScreen() {
 
     const handleReturn = () => {
-
+        console.log('Return to Homepage');
     }
 
 
