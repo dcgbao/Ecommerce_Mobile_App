@@ -4,6 +4,7 @@ import { styles } from './style';
 import PaidIcon from '@mui/icons-material/Paid';
 import { color } from '../../utils/colors';
 import { BackButton } from '../../components/BackButton';
+import { screenName } from '../../utils/screenName';
 
 
 const OrderConfirmationData = {
@@ -13,25 +14,30 @@ const OrderConfirmationData = {
 }
 
 
-export default function OrderConfirmationScreen() {
+export function OrderConfirmationScreen({ navigation }) {
 
-    const handleNavigate = () => {
-        console.log('Navigate to another page');
+    const handleNavigateUserCart = () => {
+        console.log('Navigate to user cart page');
+        navigation.navigate(screenName.USER_CART);
     }
 
-    const handleConfirm = () => {
+    const handleConfirmOrder = () => {
         console.log('Confirm this order');
+        navigation.navigate(screenName.PAYMENT_SUCCESS);
     }
 
     return (
-        <SafeAreaView style={{ flex: 1 }}>
-            <BackButton action={handleNavigate} />
+        <SafeAreaView style={{ flex: 1, backgroundColor: color.BACKGROUND }}>
+            <BackButton action={handleNavigateUserCart} />
             <View style={styles.container}>
                 <View style={{ fontSize: 120, color: color.PRIMARY }}>
                     <PaidIcon fontSize='inherit' color='inherit'></PaidIcon>
                 </View>
                 <Text style={styles.confirmText}>Xác nhận thanh toán</Text>
-                <Text style={styles.idText}>Thanh toán đơn hàng mã số {OrderConfirmationData.orderId} </Text>
+
+                {/* LƯU Ý: GIAO DỊCH XONG MỚI CÓ ID */}
+                {/* <Text style={styles.idText}>Thanh toán đơn hàng mã số {OrderConfirmationData.orderId} </Text> */}
+
                 <View style={{ marginTop: 90, marginBottom: 150, width: '100%' }}>
                     <Text style={{ fontWeight: 600, marginBottom: 10, fontSize: 18 }}>Thông tin đơn hàng</Text>
                     <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', marginBottom: 5 }}>
@@ -45,7 +51,7 @@ export default function OrderConfirmationScreen() {
                 </View>
                 <TouchableOpacity
                     style={styles.buttonContainer}
-                    onPress={handleConfirm}
+                    onPress={handleConfirmOrder}
                 >
                     <Text style={styles.buttonLabel}>Xác nhận</Text>
                 </TouchableOpacity>

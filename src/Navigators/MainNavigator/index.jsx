@@ -10,6 +10,10 @@ import { color } from '../../utils/colors';
 import { tabName } from '../../utils/tabName';
 import { ProductScreen } from '../../screens/ProductScreen';
 import { ProductDetailScreen } from '../../screens/ProductDetailScreen';
+import { ProfileScreen } from '../../screens/ProfileScreen';
+import { PaymentSuccessScreen } from '../../screens/PaymentSuccessScreen';
+import { OrderConfirmationScreen } from '../../screens/OrderConfirmationScreen';
+import { OrderDetailScreen } from '../../screens/OrderDetailScreen';
 
 export function MainNavigator() {
   const Tab = createBottomTabNavigator()
@@ -77,7 +81,7 @@ export function MainNavigator() {
       />
       <Tab.Screen
         name={screenName.ACCOUNT}
-        component={HomeScreen}
+        component={ProfileScreen}
         options={{
           tabBarLabel: (props) => TabLabel({
             inherit: props,
@@ -115,6 +119,31 @@ export function MainNavigator() {
           tabBarButton: () => null,
         })}
       />
+
+
+      <Tab.Screen
+        name={screenName.PAYMENT_SUCCESS}
+        component={PaymentSuccessScreen}
+        options={() => ({
+          tabBarButton: () => null,
+        })}
+      />
+      <Tab.Screen
+        name={screenName.ORDER_CONFIRMATION}
+        component={OrderConfirmationScreen}
+        options={() => ({
+          tabBarButton: () => null,
+        })}
+      />
+      <Tab.Screen
+        name={screenName.ORDER_DETAIL}
+        component={OrderDetailScreen}
+        options={() => ({
+          tabBarButton: () => null,
+        })}
+      />
+
+
     </Tab.Navigator>
   )
 }

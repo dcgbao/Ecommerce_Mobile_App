@@ -3,10 +3,23 @@ import { SafeAreaView, TouchableOpacity, View } from 'react-native'
 import { styles } from "./style";
 import { Avatar, Title, Caption, Text } from 'react-native-paper';
 import FeatherIcon from 'react-native-vector-icons/Feather'
+import { color } from '../../utils/colors';
+import { screenName } from '../../utils/screenName';
 
-export default function ProfileScreen() {
+export function ProfileScreen({ navigation }) {
+
+    const handleNavigateBoughtProducts = () => {
+        console.log('Navigate to bought products page');
+        navigation.navigate(screenName.ORDERED_MANAGEMENT);
+    }
+
+    const handleNavigateSoldProducts = () => {
+        console.log('Navigate to sold products page');
+        navigation.navigate(screenName.POSTING_MANAGEMENT);
+    }
+
     return (
-        <SafeAreaView style={{ flex: 1 }}>
+        <SafeAreaView style={{ flex: 1, backgroundColor: color.BACKGROUND }}>
             <View style={styles.container}>
                 <View>
                     <Text style={styles.pageName}>Tài khoản</Text>
@@ -25,7 +38,7 @@ export default function ProfileScreen() {
                     <Caption style={styles.rowCaption}>9.5 điểm</Caption>
                 </View>
                 <View style={styles.rowWrapper}>
-                    <TouchableOpacity style={{ flexDirection: 'row' }}>
+                    <TouchableOpacity style={{ flexDirection: 'row' }} onPress={handleNavigateBoughtProducts}>
                         <View style={styles.row}>
                             <Title style={styles.rowTitle}>Đơn mua</Title>
                             <Caption style={styles.rowCaption}>18 đơn mua</Caption>
@@ -37,7 +50,7 @@ export default function ProfileScreen() {
                     </TouchableOpacity>
                 </View>
                 <View style={styles.rowWrapper}>
-                    <TouchableOpacity style={{ flexDirection: 'row' }}>
+                    <TouchableOpacity style={{ flexDirection: 'row' }} onPress={handleNavigateSoldProducts}>
                         <View style={styles.row}>
                             <Title style={styles.rowTitle}>Đơn bán</Title>
                             <Caption style={styles.rowCaption}>10 đơn bán</Caption>

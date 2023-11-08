@@ -4,6 +4,7 @@ import { Header } from '../../components/Header';
 import { styles } from './style';
 import { color } from '../../utils/colors';
 import { Paper } from '@mui/material';
+import { screenName } from '../../utils/screenName';
 
 
 const OrderDetailData = {
@@ -35,20 +36,22 @@ const OrderDetailData = {
 }
 
 
-export const OrderDetailScreen = () => {
+export function OrderDetailScreen({ navigation }) {
 
-    const handleNavigate = () => {
-        console.log('Navigate to another page');
+    const handleNavigateBoughtProducts = () => {
+        console.log('Navigate to bought products page');
+        navigation.navigate(screenName.ORDERED_MANAGEMENT);
     }
 
-    const handleDelete = () => {
+    const handleDeleteOrder = () => {
         console.log('Delete this order');
+        navigation.navigate(screenName.ORDERED_MANAGEMENT);
     }
 
     return (
-        <SafeAreaView style={{ flex: 1 }}>
+        <SafeAreaView style={{ flex: 1, backgroundColor: color.BACKGROUND }}>
             <View style={styles.container}>
-                <Header action={handleNavigate} />
+                <Header action={handleNavigateBoughtProducts} />
                 <ScrollView style={styles.content}>
                     <Text style={styles.pageName}>Chi tiết đơn hàng</Text>
                     <Text style={{ fontWeight: 600, marginBottom: 10, fontSize: 16 }}>{OrderDetailData.productList.length} sản phẩm</Text>
@@ -82,7 +85,7 @@ export const OrderDetailScreen = () => {
 
                     <TouchableOpacity
                         style={styles.buttonContainer}
-                        onPress={handleDelete}>
+                        onPress={handleDeleteOrder}>
                         <Text style={styles.buttonLabel}>Hủy đơn</Text>
                     </TouchableOpacity>
                 </ScrollView>

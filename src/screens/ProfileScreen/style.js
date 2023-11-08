@@ -4,7 +4,7 @@ import { color } from "../../utils/colors"
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        marginHorizontal: 16
+        marginHorizontal: 16,
     },
     pageName: {
         marginTop: 80,

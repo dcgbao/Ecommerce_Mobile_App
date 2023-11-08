@@ -3,16 +3,16 @@ import { View, Text, TouchableOpacity, SafeAreaView } from 'react-native';
 import { styles } from './style';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { color } from '../../utils/colors';
+import { screenName } from '../../utils/screenName';
 
-export default function PaymentSuccessScreen() {
-
-    const handleReturn = () => {
-        console.log('Return to Homepage');
+export function PaymentSuccessScreen({ navigation }) {
+    const handleReturnHome = () => {
+        console.log('Return to homepage');
+        navigation.navigate(screenName.HOME);
     }
 
-
     return (
-        <SafeAreaView style={{ flex: 1 }}>
+        <SafeAreaView style={{ flex: 1, backgroundColor: color.BACKGROUND }}>
             <View style={styles.container}>
                 <View style={{ fontSize: 100, color: color.PRIMARY }}>
                     <CheckCircleIcon fontSize='inherit' color='inherit'></CheckCircleIcon>
@@ -22,7 +22,7 @@ export default function PaymentSuccessScreen() {
                 <Text style={styles.thankText}>Cảm ơn bạn đã mua hàng!</Text>
                 <TouchableOpacity
                     style={styles.buttonContainer}
-                    onPress={handleReturn}
+                    onPress={handleReturnHome}
                 >
                     <Text style={styles.buttonLabel}>Quay về trang chủ</Text>
                 </TouchableOpacity>
