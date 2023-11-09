@@ -169,7 +169,7 @@ export const USERdate = [
 
 export const Conversations = [
   {
-    id: 'chatscreen1',
+    id: 0,
     partner: 'Cellphone S',
     avatar: assets.person01,
     messages: [
@@ -194,7 +194,7 @@ export const Conversations = [
     ]
   },
   {
-    id: 'chatscreen2',
+    id: 1,
     partner: 'Thegioididong',
     avatar: assets.person02,
     messages: [
@@ -225,7 +225,7 @@ export const Conversations = [
     ]
   },
   {
-    id: 'chatscreen3',
+    id: 2,
     partner: 'FPT Shop',
     avatar: assets.person03,
     messages: [

@@ -2,9 +2,15 @@ import { View, Text, TouchableOpacity, Image } from 'react-native'
 import { color } from '../../utils/colors'
 import { SIZES, STYLES } from '../../utils/constants'
 
+import { useNavigation } from '@react-navigation/native'
+
 export const ReceiverCard = ({ data }) => {
+    const navigation = useNavigation()
+
     return (
-        <TouchableOpacity>
+        <TouchableOpacity
+            onPress={() => navigation.navigate('ChatScreen', { data })}
+        >
             <View style={{
                 marginLeft: SIZES.font,
                 marginRight: SIZES.font,

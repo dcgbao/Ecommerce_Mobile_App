@@ -2,9 +2,12 @@ import { View, Text, Image, TouchableOpacity, TextInput, KeyboardAvoidingView } 
 import { color } from '../../utils/colors'
 import { SIZES, STYLES, LAYERS, assets, SHADOWS } from '../../utils/constants'
 import { useState } from 'react'
+import { useNavigation } from '@react-navigation/native'
 
 
 export const PartnerBar = ({ avatar, name }) => {
+    const navigation = useNavigation()
+
     return (
         <View style={{
             zIndex: LAYERS.second,
@@ -12,15 +15,17 @@ export const PartnerBar = ({ avatar, name }) => {
             flexDirection: 'row',
             justifyContent: 'space-between',
             alignItems: 'center',
-            margin: SIZES.base,
+            padding: SIZES.base,
             marginBottom: SIZES.exextraLarge,
         }}>
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                <TouchableOpacity>
+                <TouchableOpacity
+                    onPress={() => navigation.goBack()}
+                >
                     <Image
                         source={assets.left}
                         style={{
-                            width: 20, height: 20,
+                            width: 25, height: 25,
                         }}
                     />
                 </TouchableOpacity>
@@ -134,12 +139,12 @@ export const BottomBar = () => {
                 zIndex: LAYERS.top,
             }}>
             <View style={{
-                padding: SIZES.font,
+                paddingTop: SIZES.base,
+                paddingBottom: SIZES.base,
                 width: '100%',
                 alignItems: 'center',
-                justifyContent: 'space-between',
+                justifyContent: 'space-evenly',
                 flexDirection: 'row',
-                padding: SIZES.base,
                 borderTopWidth: 1,
                 borderColor: color.GREY,
                 backgroundColor: color.WHITE,
@@ -149,7 +154,7 @@ export const BottomBar = () => {
                         source={assets.clip}
                         style={{
                             width: 20, height: 20,
-                            marginLeft: 5
+                            // marginLeft: 5
                         }}
                     />
                 </TouchableOpacity>

@@ -14,6 +14,7 @@ import { ProfileScreen } from '../../screens/ProfileScreen';
 import { PaymentSuccessScreen } from '../../screens/PaymentSuccessScreen';
 import { OrderConfirmationScreen } from '../../screens/OrderConfirmationScreen';
 import { OrderDetailScreen } from '../../screens/OrderDetailScreen';
+import { Chat } from '../ChatNavigator';
 
 export function MainNavigator() {
   const Tab = createBottomTabNavigator()
@@ -54,7 +55,7 @@ export function MainNavigator() {
       />
       <Tab.Screen
         name={screenName.MESSAGE}
-        component={HomeScreen}
+        component={Chat}
         options={{
           tabBarLabel: (props) => TabLabel({
             inherit: props,

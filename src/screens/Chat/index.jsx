@@ -1,22 +1,23 @@
-import { View, Text, SafeAreaView, Image, TouchableOpacity } from 'react-native'
+import { View, Text, SafeAreaView, Image, TouchableOpacity, FlatList } from 'react-native'
 import { color } from '../../utils/colors'
 import { SIZES, SHADOWS, assets, LAYERS } from '../../utils/constants'
-import { FlatList } from 'react-native-gesture-handler'
 import { Conversations } from '../../utils/constants'
 import { ReceiverCard } from '../../components/ChatButton'
 import { ChatBox, PartnerBar, BottomBar } from '../../components/ChatBox'
+import { useRoute } from '@react-navigation/native'
 
 export const ChatList = () => {
+
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <View style={{
-                flex: 1
+                flex: 1,
+                backgroundColor: color.WHITE,
             }}>
 
                 {/* TOP BAR */}
                 <View style={{
                     zIndex: LAYERS.top,
-                    backgroundColor: color.WHITE,
                     flexDirection: 'row',
                     justifyContent: 'space-between',
                     alignItems: 'center',
@@ -42,7 +43,7 @@ export const ChatList = () => {
 
                     </View>
                 </View>
-
+                {/* CHAT HISTORY */}
                 <FlatList
                     data={Conversations}
                     renderItem={({ item }) => <ReceiverCard data={item} />}
@@ -55,16 +56,17 @@ export const ChatList = () => {
     )
 }
 
-export const ChatScreen = () => {
-    const sample = Conversations[0]
+export const ChatScreen = ({ navigation }) => {
+    const route = useRoute()
+    const { data } = route.params
 
     return (
         <SafeAreaView style={{ flex: 1 }}>
-            <PartnerBar avatar={sample.avatar} name={sample.partner} />
+            <PartnerBar avatar={data.avatar} name={data.partner} />
             <FlatList
                 style={{ zIndex: LAYERS.top }}
-                data={sample.messages}
-                renderItem={({ item }) => <ChatBox msg={item} ava={sample.avatar} />}
+                data={data.messages}
+                renderItem={({ item }) => <ChatBox msg={item} ava={data.avatar} />}
                 showsVerticalScrollIndicator={false}
             />
             <BottomBar />
