@@ -178,15 +178,16 @@ const PostingTabLabel = () => {
       width: 74,
       borderRadius: '50%',
       backgroundColor: color.PRIMARY,
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
       position: 'relative',
-      bottom: '40%'
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center'
     }}>
       <Text style={{
         color: color.WHITE,
         fontSize: 40,
+        lineHeight: 40,
+        width: '100%',
         textAlign: 'center',
       }}>{'+'}</Text>
     </View>

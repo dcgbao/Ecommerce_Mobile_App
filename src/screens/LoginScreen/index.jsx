@@ -1,4 +1,4 @@
-import { KeyboardAvoidingView } from "react-native";
+import { KeyboardAvoidingView, Text } from "react-native";
 import { style } from "./style";
 import { BackButton } from "../../components/BackButton";
 import { AuthenInput } from "../../components/AuthenInput";
@@ -6,21 +6,32 @@ import { AuthenOptionButton } from "../../components/AuthenOptionButton";
 import { AuthenButton } from "../../components/AuthenButton";
 import { AuthenTitle } from "../../components/AuthenTitle";
 import { useEffect, useState } from "react";
-import { checkEmail, checkPassword } from "../../utils/checkInputFunction";
 import { screenName } from "../../utils/screenName";
+import { http } from "../../services/http";
+import { color } from "../../utils/colors";
 
 export function LoginScreen({ navigation }) {
-  const [email, setEmail] = useState('')
+  const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const [error, setError] = useState('')
   const [buttonDisabled, setButtonDisabled] = useState(true)
 
-  const handleLogin = () => {
-    navigation.navigate(screenName.MAIN_NAVIGATOR)
+  const handleLogin = async () => {
+    try {
+      await http.post('/auth/login', {
+        username: username,
+        password: password
+      })
+      navigation.navigate(screenName.MAIN_NAVIGATOR);
+    } catch (error) {
+      error.response.status && setError("Thông tin đăng nhập không chính xác")
+    }
   }
 
   useEffect(() => {
-    setButtonDisabled(!(checkEmail(email) && checkPassword(password)))
-  }, [email, password])
+    if(username && password) setButtonDisabled(false)
+    else setButtonDisabled(true)
+  }, [username, password])
 
   return (
     <KeyboardAvoidingView style={style.container} behavior="position">
@@ -29,10 +40,9 @@ export function LoginScreen({ navigation }) {
       <AuthenTitle name={"Đăng nhập"} />
 
       <AuthenInput
-        label={"Email"}
-        value={email}
-        setValue={setEmail}
-        checkValue={checkEmail}
+        label={"Tên đăng nhập"}
+        value={username}
+        setValue={setUsername}
         length={50}
       />
 
@@ -40,11 +50,13 @@ export function LoginScreen({ navigation }) {
         label={"Mật khẩu"}
         value={password}
         setValue={setPassword}
-        checkValue={checkPassword}
         length={50}
         secure={true}
-        warning={"Định dạng email không đúng, vui lòng thử lại."}
       />
+
+      {
+        error && <Text style={{ color: color.RED, marginLeft: 12 }}>{error}</Text>
+      }
 
       <AuthenOptionButton
         label={"Quên mật khẩu?"}

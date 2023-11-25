@@ -14,7 +14,7 @@ export const PostingScreen = ({ navigation }) => {
     <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
       <SafeAreaView>
         <View style={styles.container}>
-          <Header action={pageNavigationHandler} title={'Đăng sảng phẩm'} />
+          <Header action={pageNavigationHandler} title={'Đăng sản phẩm'} />
           <ScrollView style={styles.form}>
             <View style={styles.field}>
               <Text style={styles.label}>Tải ảnh lên</Text>

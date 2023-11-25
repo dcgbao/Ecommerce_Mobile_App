@@ -32,6 +32,7 @@ const style = StyleSheet.create({
     position: "absolute",
     zIndex: 1,
     right: 0,
-    top: -7,
+    top: -4,
+    overflow: 'hidden',
   },
 })

@@ -20,7 +20,7 @@ export function AuthenInput({
     if (!value) {
       setValid(true)
     } else {
-      setValid(checkValue(value))
+      checkValue && setValid(checkValue(value))
     }
     setValue(value)
   }

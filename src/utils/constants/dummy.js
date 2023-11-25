@@ -1,6 +1,6 @@
 import assets from "./assets";
 
-export const USERdate = [
+export const USERdata = [
   {
     id: "USER01",
     name: "Helene Moore",

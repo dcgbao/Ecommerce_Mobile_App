@@ -2,7 +2,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { screenName } from '../../utils/screenName';
 import { LoginScreen } from '../../screens/LoginScreen';
 import { RegisterScreen } from '../../screens/RegisterScreen';
-import { ForgotPasswordScreen } from '../../screens/ForgotPasswordScreen';
+import { ForgotPasswordScreen } from "../../screens/ForgotPasswordScreen/ForgotPasswordScreen";
 
 export function AuthenticationNavigator() {
   const Stack = createNativeStackNavigator()
